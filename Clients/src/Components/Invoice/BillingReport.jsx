@@ -117,12 +117,12 @@ function BillingReport() {
       >
         Press <strong>Ctrl + Q</strong> to submit
       </div>
-      <div className='text-center mt-4'>
+      <div className="text-center mt-4">
         <button
-          className='btn btn-primary px-4 py-2'
+          className="btn btn-primary px-4 py-2"
           onClick={handleSubmit}
           style={{ fontWeight: "bold", fontSize: "16px", borderRadius: "8px" }}
-          title='Shortcut: Ctrl + Enter'
+          title="Shortcut: Ctrl + Enter"
         >
           Submit
         </button>
