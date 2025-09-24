@@ -191,8 +191,8 @@ const DisplayInvoice = () => {
   console.log(visibleItems, "LIONMs");
 
   return (
-    <div className='w-full mt-4 px-3'>
-      <h2 className='mb-4'>All Invoices</h2>
+    <div className="w-full mt-4 px-3">
+      <h2 className="mb-4">All Invoices</h2>
 
       <div style={{ overflowX: "auto" }}>
         <Table
@@ -202,7 +202,7 @@ const DisplayInvoice = () => {
           responsive
           style={{ tableLayout: "fixed", minWidth: "900px" }}
         >
-          <thead className='bg-light sticky-top' style={{ top: 0, zIndex: 1 }}>
+          <thead className="bg-light sticky-top" style={{ top: 0, zIndex: 1 }}>
             <tr>
               <th style={{ width: "120px" }}>Date</th>
               <th>Item Purchased</th>
@@ -267,8 +267,8 @@ const DisplayInvoice = () => {
 
                   <td>
                     <Button
-                      variant='outline-primary'
-                      size='sm'
+                      variant="outline-primary"
+                      size="sm"
                       onClick={() => handlePrint(invoice._id)}
                     >
                       Print
@@ -277,8 +277,8 @@ const DisplayInvoice = () => {
 
                   <td>
                     <Button
-                      variant='outline-danger'
-                      size='sm'
+                      variant="outline-danger"
+                      size="sm"
                       onClick={() => handleDelete(invoice._id)}
                     >
                       Delete
@@ -292,14 +292,14 @@ const DisplayInvoice = () => {
       </div>
 
       {/* 🔍 Searchable Modal */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} size='xl'>
+      <Modal show={showModal} onHide={() => setShowModal(false)} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Search Invoices</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Control
-            type='text'
-            placeholder='Search by customer name...'
+            type="text"
+            placeholder="Search by customer name..."
             value={filterText}
             onChange={(e) => setFilterText(e.target.value)}
             ref={inputRef}
@@ -308,7 +308,7 @@ const DisplayInvoice = () => {
           <div
             style={{ maxHeight: "400px", overflowY: "auto", marginTop: "1rem" }}
           >
-            <Table hover size='sm' bordered>
+            <Table hover size="sm" bordered>
               <thead>
                 <tr>
                   <th>Customer Name</th> {/* ✅ NEW */}
@@ -323,7 +323,7 @@ const DisplayInvoice = () => {
               <tbody>
                 {visibleItems.length === 0 && (
                   <tr>
-                    <td colSpan={6} className='text-center text-muted'>
+                    <td colSpan={6} className="text-center text-muted">
                       No invoices found
                     </td>
                   </tr>
@@ -385,7 +385,7 @@ const DisplayInvoice = () => {
           </div>
         </Modal.Body>
       </Modal>
-      <ToastContainer position='top-right' autoClose={3000} />
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
