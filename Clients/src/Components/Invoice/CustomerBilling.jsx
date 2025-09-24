@@ -252,12 +252,12 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
   }
 
   return (
-    <div className='container mt-4'>
-      <h4 className='mb-4'>Customer Billing</h4>
+    <div className="container mt-4">
+      <h4 className="mb-4">Customer Billing</h4>
       <form>
-        <div className='row'>
+        <div className="row">
           {/* Salesman */}
-          <div className='form-group col-md-6'>
+          <div className="form-group col-md-6">
             <label>
               <strong>Salesman</strong>
             </label>
@@ -270,9 +270,9 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
                     value: selectedSalesman._id,
                   }
                 }
-                placeholder='Select Salesman...'
+                placeholder="Select Salesman..."
                 isDisabled={false}
-                classNamePrefix='react-select'
+                classNamePrefix="react-select"
                 menuPortalTarget={document.body}
                 styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}
                 onKeyDown={handleReactSelectKeyDown}
@@ -281,7 +281,7 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
           </div>
 
           {/* Beat */}
-          <div className='form-group col-md-6'>
+          <div className="form-group col-md-6">
             <label>
               <strong>Beat</strong>
             </label>
@@ -296,16 +296,16 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
               onChange={(opt) => setSelectedBeat(opt?.beatObject)}
               ref={beatSelectRef}
               onKeyDown={handleReactSelectKeyDown}
-              placeholder='Select Beat...'
+              placeholder="Select Beat..."
               isDisabled={!selectedSalesman}
-              classNamePrefix='react-select'
+              classNamePrefix="react-select"
               menuPortalTarget={document.body}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}
             />
           </div>
 
           {/* Customer */}
-          <div className='form-group col-md-6'>
+          <div className="form-group col-md-6">
             <label>
               <strong>Customer</strong>
             </label>
@@ -322,9 +322,9 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
                     value: selectedCustomer._id,
                   }
                 }
-                placeholder='Select Customer...'
+                placeholder="Select Customer..."
                 isDisabled={!selectedBeat}
-                classNamePrefix='react-select'
+                classNamePrefix="react-select"
                 menuPortalTarget={document.body}
                 styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}
                 onKeyDown={handleReactSelectKeyDown} // ✅ Added
@@ -333,14 +333,14 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
           </div>
 
           {/* Bill Date */}
-          <div className='form-group col-md-6'>
+          <div className="form-group col-md-6">
             <label>
               <strong>Bill Date</strong>
             </label>
             <input
-              type='date'
-              className='form-control'
-              name='Billdate'
+              type="date"
+              className="form-control"
+              name="Billdate"
               value={formData.Billdate}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
@@ -390,13 +390,13 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
             </select>
           </div> */}
 
-          <div className='form-group col-md-6'>
+          <div className="form-group col-md-6">
             <label>
               <strong>Billing Type</strong>
             </label>
             <select
-              name='billingType'
-              className='form-control'
+              name="billingType"
+              className="form-control"
               value={formData.billingType || ""}
               onChange={(e) => {
                 const value = e.target.value;
@@ -416,30 +416,30 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
               onKeyDown={handleKeyDown}
               required
             >
-              <option value=''>-- Select --</option>
-              <option value='Credit'>Credit</option>
-              <option value='Cash'>Cash</option>
+              <option value="">-- Select --</option>
+              <option value="Credit">Credit</option>
+              <option value="Cash">Cash</option>
             </select>
           </div>
 
           {formData.billingType === "Cash" && (
-            <div className='form-group col-md-6'>
+            <div className="form-group col-md-6">
               <label>
                 <strong>Payment Mode</strong>
               </label>
               <select
-                name='paymentMode'
-                className='form-control'
+                name="paymentMode"
+                className="form-control"
                 value={formData.paymentMode || "Cash"}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 required
               >
-                <option value='Cash'>Cash</option>
-                <option value='Card'>Card</option>
-                <option value='UPI'>UPI</option>
-                <option value='Net Banking'>Net Banking</option>
-                <option value='Cheque'>Cheque</option>
+                <option value="Cash">Cash</option>
+                <option value="Card">Card</option>
+                <option value="UPI">UPI</option>
+                <option value="Net Banking">Net Banking</option>
+                <option value="Cheque">Cheque</option>
               </select>
             </div>
           )}
@@ -450,7 +450,7 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
       {/* //! customer */}
       {showModal && (
         <div
-          className='modal-backdrop'
+          className="modal-backdrop"
           style={{
             position: "fixed",
             top: 0,
@@ -509,9 +509,9 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
             <h5>Select Customer</h5>
             <input
               ref={inputRef}
-              type='text'
-              className='form-control mb-3'
-              placeholder='Search by customer name...'
+              type="text"
+              className="form-control mb-3"
+              placeholder="Search by customer name..."
               value={filterText}
               onChange={(e) => {
                 setFilterText(e.target.value);
@@ -520,8 +520,8 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
               autoFocus
             />
 
-            <table className='table table-hover table-bordered'>
-              <thead className='table-light'>
+            <table className="table table-hover table-bordered">
+              <thead className="table-light">
                 <tr>
                   <th>Name</th>
                   <th>Area</th>
@@ -554,7 +554,7 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
       {/* //! salesman */}
       {showSalesmanModal && (
         <div
-          className='modal-backdrop'
+          className="modal-backdrop"
           style={{
             position: "fixed",
             top: 0,
@@ -612,9 +612,9 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
             <h5>Select Salesman</h5>
             <input
               ref={salesmanInputRef}
-              type='text'
-              className='form-control mb-3'
-              placeholder='Search by salesman name...'
+              type="text"
+              className="form-control mb-3"
+              placeholder="Search by salesman name..."
               value={salesmanFilterText}
               onChange={(e) => {
                 setSalesmanFilterText(e.target.value);
@@ -623,8 +623,8 @@ const CustomerBilling = ({ onDataChange, resetTrigger, onNextFocus }) => {
               autoFocus
             />
 
-            <table className='table table-hover table-bordered'>
-              <thead className='table-light'>
+            <table className="table table-hover table-bordered">
+              <thead className="table-light">
                 <tr>
                   <th>Name</th>
                   <th>Mobile</th>
