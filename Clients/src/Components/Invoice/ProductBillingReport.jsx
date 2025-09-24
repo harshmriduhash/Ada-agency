@@ -483,7 +483,7 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
 
   return (
     <div
-      className='mt-4'
+      className="mt-4"
       style={{
         width: "100vw",
         padding: "0 1rem",
@@ -492,13 +492,13 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
         transform: "translateX(-50%)",
       }}
     >
-      <h2 className='text-center mb-4'>Product Invoice</h2>
+      <h2 className="text-center mb-4">Product Invoice</h2>
 
-      <div className='mt-3 p-3 bg-light border rounded'>
+      <div className="mt-3 p-3 bg-light border rounded">
         <h5>Total Items: {rows.length}</h5>
-        <div className='d-flex align-items-center gap-4 text-muted mb-0'>
+        <div className="d-flex align-items-center gap-4 text-muted mb-0">
           <strong>Shortcuts:</strong>
-          <div className='d-flex align-items-center gap-3'>
+          <div className="d-flex align-items-center gap-3">
             <span>
               <strong>New Line:</strong> Enter
             </span>
@@ -513,18 +513,18 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
       </div>
 
       <div
-        className='table-responsive'
+        className="table-responsive"
         style={{ maxHeight: "70vh", overflowX: "auto", overflowY: "auto" }}
       >
         <table
-          className='table table-bordered text-center'
+          className="table table-bordered text-center"
           style={{
             border: "2px solid #dee2e6",
             borderRadius: "8px",
             minWidth: "1200px",
           }}
         >
-          <thead className='table-secondary'>
+          <thead className="table-secondary">
             <tr>
               {fields.map((field, idx) => (
                 <th key={idx}>
@@ -556,7 +556,7 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
                               if (rowIndex === 0) selectRef.current = ref; // optional
                             }
                           }}
-                          className='w-100'
+                          className="w-100"
                           // isDisabled
 
                           value={
@@ -567,7 +567,7 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
                                 }
                               : null
                           }
-                          placeholder='Select Product'
+                          placeholder="Select Product"
                           styles={{
                             container: (base) => ({
                               ...base,
@@ -578,7 +578,7 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
                       </div>
                     ) : field === "Unit" ? (
                       <Select
-                        className='w-100'
+                        className="w-100"
                         value={
                           row.Unit ? { label: row.Unit, value: row.Unit } : null
                         }
@@ -631,22 +631,22 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
                         "Basic",
                       ].includes(field) ? (
                       <input
-                        type='number'
-                        className='form-control'
+                        type="number"
+                        className="form-control"
                         value={row[field]}
                         readOnly
                       />
                     ) : field === "GST" ? (
                       <input
-                        type='text'
-                        className='form-control'
+                        type="text"
+                        className="form-control"
                         value={row[field]}
                         readOnly
                       />
                     ) : (
                       <input
-                        type='text'
-                        className='form-control'
+                        type="text"
+                        className="form-control"
                         ref={(el) => {
                           if (field === "Qty") qtyRefs.current[rowIndex] = el;
                         }}
@@ -662,7 +662,7 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
             ))}
 
             <tr style={{ fontWeight: "bold", backgroundColor: "#f8f9fa" }}>
-              <td colSpan={fields.length - 1} className='text-start'>
+              <td colSpan={fields.length - 1} className="text-start">
                 Final Amount: ₹ <span>{finalTotalAmount}</span>
               </td>
             </tr>
@@ -726,9 +726,9 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
             <h5>Select a Product</h5>
 
             <input
-              type='text'
-              className='form-control mb-3'
-              placeholder='Search products...'
+              type="text"
+              className="form-control mb-3"
+              placeholder="Search products..."
               value={filterText}
               onChange={(e) => {
                 setFilterText(e.target.value);
@@ -738,8 +738,8 @@ const ProductBillingReport = ({ onBillingDataChange }, ref) => {
               autoFocus
             />
 
-            <table className='table table-bordered table-hover'>
-              <thead className='table-light'>
+            <table className="table table-bordered table-hover">
+              <thead className="table-light">
                 <tr>
                   <th>Product Name</th>
                   <th>HSN Code</th>
