@@ -59,7 +59,7 @@ const GenerateInvoice = () => {
     fetchInvoice();
   }, [id]);
 
-  if (error) return <p className='text-danger'>{error}</p>;
+  if (error) return <p className="text-danger">{error}</p>;
   if (loading || !invoice) return <Loader />;
 
   const calculateTotals = () => {
@@ -115,7 +115,7 @@ const GenerateInvoice = () => {
 
   return (
     <div>
-      <div className='container  d-print-none'>
+      <div className="container  d-print-none">
         {/* <select
           value={printOrientation}
           onChange={(e) => setPrintOrientation(e.target.value)}
@@ -127,7 +127,7 @@ const GenerateInvoice = () => {
 
         <button
           onClick={() => window.print()}
-          className='btn btn-primary my-3 d-print-none'
+          className="btn btn-primary my-3 d-print-none"
         >
           Print Invoice
         </button>
@@ -183,11 +183,11 @@ const GenerateInvoice = () => {
         `}
       </style>
 
-      <div id='print-area'>
+      <div id="print-area">
         {billingChunks.map((chunk, pageIndex) => (
           <div
             key={pageIndex}
-            className='invoice-page'
+            className="invoice-page"
             style={{
               // width: "210mm",
               margin: "auto",
@@ -305,7 +305,7 @@ const GenerateInvoice = () => {
 
               <Table
                 bordered
-                className='mt-1 table-sm'
+                className="mt-1 table-sm"
                 style={{ border: "1px solid #000", fontSize: "12px" }}
               >
                 <thead>
@@ -496,12 +496,12 @@ const GenerateInvoice = () => {
 
                   {pageIndex === billingChunks.length - 1 && (
                     <tr style={{ fontWeight: "bold" }}>
-                      <td className='border border-black p-1'></td>
-                      <td className='border border-black p-1' colSpan={1}>
+                      <td className="border border-black p-1"></td>
+                      <td className="border border-black p-1" colSpan={1}>
                         Basic Amount: {totals.total?.toFixed(2) || "0.00"}
                       </td>
                       <td
-                        className='p-1'
+                        className="p-1"
                         style={{
                           borderBottom: "1px solid black",
                           borderTop: "1px solid black",
@@ -510,7 +510,7 @@ const GenerateInvoice = () => {
                         QTY:{" "}
                       </td>
                       <td
-                        className='p-1'
+                        className="p-1"
                         style={{
                           borderBottom: "1px solid black",
                           borderTop: "1px solid black",
@@ -519,7 +519,7 @@ const GenerateInvoice = () => {
                         C/S 0
                       </td>
                       <td
-                        className='p-1'
+                        className="p-1"
                         style={{
                           borderBottom: "1px solid black",
                           borderRight: "1px solid black",
@@ -531,21 +531,21 @@ const GenerateInvoice = () => {
                       </td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       >
                         0
                       </td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       ></td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       ></td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       >
                         {billing
                           .reduce(
@@ -556,29 +556,29 @@ const GenerateInvoice = () => {
                       </td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1 '
+                        className="border border-black p-1 "
                       ></td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       >
                         {totals.total?.toFixed(2) || "0.00"}
                       </td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       >
                         {((totals.total || 0) * 0.06).toFixed(2)}
                       </td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1'
+                        className="border border-black p-1"
                       >
                         {totals.cgst?.toFixed(2) || "0.00"}
                       </td>
                       <td
                         style={{ textAlign: "right" }}
-                        className='border border-black p-1 '
+                        className="border border-black p-1 "
                       >
                         {invoice.finalAmount?.toFixed(2) || "0.00"}
                       </td>
@@ -589,7 +589,7 @@ const GenerateInvoice = () => {
 
               {pageIndex < billingChunks.length - 1 && (
                 <div
-                  className='invoice-footer '
+                  className="invoice-footer "
                   style={{
                     display: "flex",
                     padding: "5px",
@@ -617,7 +617,7 @@ const GenerateInvoice = () => {
                   </div>
 
                   <div
-                    className=''
+                    className=""
                     style={{
                       borderLeft: "1px solid black",
                       paddingLeft: "10px",
@@ -643,7 +643,7 @@ const GenerateInvoice = () => {
 
               {pageIndex === billingChunks.length - 1 && (
                 <div
-                  className='invoice-footer '
+                  className="invoice-footer "
                   style={{
                     display: "flex",
                     padding: "5px",
@@ -671,7 +671,7 @@ const GenerateInvoice = () => {
                   </div>
                   {/* //!SGST */}
                   <div
-                    className=''
+                    className=""
                     style={{
                       borderLeft: "1px solid black",
                       paddingLeft: "10px",
